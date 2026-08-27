@@ -23,7 +23,7 @@ class StockMovementResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Operational';
+    protected static string | UnitEnum | null $navigationGroup = 'Inventory';
 
     protected static ?string $recordTitleAttribute = 'stock-movement';
 

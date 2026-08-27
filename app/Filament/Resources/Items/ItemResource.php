@@ -26,7 +26,7 @@ class ItemResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCube;
 
-    protected static string|UnitEnum|null $navigationGroup = 'Operational';
+    protected static string|UnitEnum|null $navigationGroup = 'Inventory';
 
     protected static ?string $recordTitleAttribute = 'name';
 
