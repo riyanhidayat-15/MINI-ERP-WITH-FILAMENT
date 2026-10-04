@@ -19,12 +19,47 @@ class StockController extends Controller
         return response()->json($stoks);
     }
 
-    public function movements() {
-        $movements = StockMovement::with(['item', 'user'])
-            ->latest()
-            ->paginate();
+    public function movements(Request $request) {
+        $query = StockMovement::with(['item', 'user']);
+
+        if ($request->boolean('mine')) {
+            $query->where('user_id', $request->user()->id);
+        }
+
+        $movements = $query->latest()->paginate();
 
         return response()->json($movements);
+    }
+
+    public function updateMovement(Request $request, StockMovement $movement)
+    {
+        if ($movement->user_id !== $request->user()->id) {
+            return response()->json(['message' => 'Tidak diizinkan'], 403);
+        }
+
+        if ($movement->movement_type !== 'out') {
+            return response()->json(['message' => 'Hanya barang keluar yang bisa diedit'], 422);
+        }
+
+        $validated = $request->validate([
+            'quantity' => 'required|numeric|min:0.01',
+            'note' => 'nullable|string',
+        ]);
+
+        try {
+            $updatedMovement = $this->stockService->updateStockOut(
+                $movement,
+                (float) $validated['quantity'],
+                $validated['note'] ?? null
+            );
+
+            return response()->json([
+                'message' => 'Barang keluar berhasil diperbarui',
+                'data' => $updatedMovement,
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 422);
+        }
     }
 
     public function stockIn(Request $request)

@@ -59,4 +59,40 @@ class StockService {
             ]);
         });
     }
+
+    public function updateStockOut(StockMovement $movement, float $newQty, ?string $note = null): StockMovement {
+        return DB::transaction(function () use ($movement, $newQty, $note) {
+            $branchId = $movement->branch_id;
+            $itemId = $movement->item_id;
+
+            $stock = BranchStock::withoutGlobalScopes()
+                ->where('branch_id', $branchId)
+                ->where('item_id', $itemId)
+                ->lockForUpdate()
+                ->first();
+
+            if (! $stock) {
+                throw new Exception('Data stok tidak ditemukan');
+            }
+
+            // Kembalikan quantity lama ke BranchStock (increment)
+            $stock->increment('quantity', $movement->quantity);
+
+            // Cek apakah stock cukup untuk quantity baru
+            if ($stock->quantity < $newQty) {
+                throw new Exception('Stok tidak cukup');
+            }
+
+            // Baru kurangi (decrement) dengan quantity baru
+            $stock->decrement('quantity', $newQty);
+
+            // Update record movement
+            $movement->update([
+                'quantity' => $newQty,
+                'note' => $note,
+            ]);
+
+            return $movement;
+        });
+    }
 }
