@@ -334,7 +334,18 @@
             <table class="table-receipt" border="0">
                 <tr>
                    <td style="width: 75%;">
-                        <img src="{{ public_path('storage/01KWP25EFPZM0BVGB1ZT42FBAB.png') }}" alt="" style="width: 100px; height: auto;">
+                    @php
+                        $logoPath = $company->logo_path
+                            ? storage_path('app/public' . $company->logo_path)
+                            : null;
+                    @endphp
+                   @if ($company->logo_path)
+                        <img
+                            src="{{ \Illuminate\Support\Facades\Storage::disk('public')->path($company->logo_path) }}"
+                            alt="Logo Perusahaan"
+                            style="width: 100px; height: auto;"
+                        >
+                    @endif
                     </td>
                     <td colspan="4">
                         <table class="table-right" style="width: 100%;">

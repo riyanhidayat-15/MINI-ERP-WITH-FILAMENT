@@ -335,7 +335,18 @@
             <table class="table-receipt" border="0">
                 <tr>
                    <td style="width: 75%;">
-                        <img src="<?php echo e(public_path('storage/01KWP25EFPZM0BVGB1ZT42FBAB.png')); ?>" alt="" style="width: 100px; height: auto;">
+                    <?php
+                        $logoPath = $company->logo_path
+                            ? storage_path('app/public' . $company->logo_path)
+                            : null;
+                    ?>
+                   <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($company->logo_path): ?>
+                        <img
+                            src="<?php echo e(\Illuminate\Support\Facades\Storage::disk('public')->path($company->logo_path)); ?>"
+                            alt="Logo Perusahaan"
+                            style="width: 100px; height: auto;"
+                        >
+                    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                     </td>
                     <td colspan="4">
                         <table class="table-right" style="width: 100%;">

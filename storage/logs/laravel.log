@@ -5177,3 +5177,469 @@ Did you mean one of these?
 #66 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/home/riyanh/pr...')
 #67 {main}
 "} 
+[2026-10-05 14:03:06] development.ERROR: The "-m" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"-m\" option does not exist. at /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php:211)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php(113): Symfony\\Component\\Console\\Input\\ArgvInput->addShortOption('m', NULL)
+#1 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php(90): Symfony\\Component\\Console\\Input\\ArgvInput->parseShortOption('-m')
+#2 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php(77): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('-m', true)
+#3 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/Input.php(53): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(238): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateMakeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#12 {main}
+"} 
+[2026-10-05 14:28:47] development.ERROR: No arguments expected for "migrate" command, got "dev". {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): No arguments expected for \"migrate\" command, got \"dev\". at /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php:199)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php(92): Symfony\\Component\\Console\\Input\\ArgvInput->parseArgument('dev')
+#1 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/ArgvInput.php(77): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('dev', true)
+#2 /home/riyanh/project/catering-saas/vendor/symfony/console/Input/Input.php(53): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(238): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#4 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#5 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#11 {main}
+"} 
+[2026-10-05 14:29:08] development.ERROR: SQLSTATE[HY000]: General error: 1005 Can't create temporary table for ALTER TABLE `catering_saas`.`daily_meal_counts` (errno: 150 "Foreign key constraint is incorrectly formed") (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: catering_saas, SQL: alter table `daily_meal_counts` add constraint `daily_meal_counts_category_d_foreign` foreign key (`category_d`) references `category_ds` (`id`) on delete restrict) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1005 Can't create temporary table for ALTER TABLE `catering_saas`.`daily_meal_counts` (errno: 150 \"Foreign key constraint is incorrectly formed\") (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: catering_saas, SQL: alter table `daily_meal_counts` add constraint `daily_meal_counts_category_d_foreign` foreign key (`category_d`) references `category_ds` (`id`) on delete restrict) at /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate\\Database\\Connection->runQueryCallback('alter table `da...', Array, Object(Closure))
+#1 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(576): Illuminate\\Database\\Connection->run('alter table `da...', Array, Object(Closure))
+#2 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(122): Illuminate\\Database\\Connection->statement('alter table `da...')
+#3 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(708): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(526): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(363): Illuminate\\Database\\Schema\\Builder->create('daily_meal_coun...', Object(Closure))
+#6 /home/riyanh/project/catering-saas/database/migrations/2026_10_05_142144_create_daily_meal_counts_table.php(14): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(517): Illuminate\\Database\\Migrations\\Migration@anonymous->up()
+#8 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(442): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up')
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(451): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runMigration():438}()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up', '2026_10_05_1421...')
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php(43): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runUp():253}()
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(814): Illuminate\\Console\\View\\Components\\Task->render('2026_10_05_1421...', Object(Closure))
+#13 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->write('Illuminate\\\\Cons...', '2026_10_05_1421...', Object(Closure))
+#14 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(211): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/riyanh/pr...', 9, false)
+#15 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(138): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#16 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(118): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#17 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+#18 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#19 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+#20 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#21 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#22 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#23 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#24 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate\\Container\\Container->call(Array)
+#26 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(284): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#34 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1005 Can't create temporary table for ALTER TABLE `catering_saas`.`daily_meal_counts` (errno: 150 \"Foreign key constraint is incorrectly formed\") at /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php:587)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(587): PDOStatement->execute()
+#1 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::statement():576}('alter table `da...', Array)
+#2 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate\\Database\\Connection->runQueryCallback('alter table `da...', Array, Object(Closure))
+#3 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(576): Illuminate\\Database\\Connection->run('alter table `da...', Array, Object(Closure))
+#4 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(122): Illuminate\\Database\\Connection->statement('alter table `da...')
+#5 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(708): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(526): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(363): Illuminate\\Database\\Schema\\Builder->create('daily_meal_coun...', Object(Closure))
+#8 /home/riyanh/project/catering-saas/database/migrations/2026_10_05_142144_create_daily_meal_counts_table.php(14): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(517): Illuminate\\Database\\Migrations\\Migration@anonymous->up()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(442): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up')
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(451): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runMigration():438}()
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up', '2026_10_05_1421...')
+#13 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php(43): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runUp():253}()
+#14 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(814): Illuminate\\Console\\View\\Components\\Task->render('2026_10_05_1421...', Object(Closure))
+#15 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->write('Illuminate\\\\Cons...', '2026_10_05_1421...', Object(Closure))
+#16 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(211): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/riyanh/pr...', 9, false)
+#17 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(138): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#18 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(118): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#19 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+#20 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#21 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+#22 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#23 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#24 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#26 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate\\Container\\Container->call(Array)
+#28 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(284): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#36 {main}
+"} 
+[2026-10-05 14:30:54] development.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'daily_meal_counts' already exists (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: catering_saas, SQL: create table `daily_meal_counts` (`id` bigint unsigned not null auto_increment primary key, `period_id` bigint unsigned not null, `category_id` bigint unsigned not null, `meal_date` date not null, `method` enum('finger_tap', 'manual') not null, `quantity` int not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'daily_meal_counts' already exists (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: catering_saas, SQL: create table `daily_meal_counts` (`id` bigint unsigned not null auto_increment primary key, `period_id` bigint unsigned not null, `category_id` bigint unsigned not null, `meal_date` date not null, `method` enum('finger_tap', 'manual') not null, `quantity` int not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php:841)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate\\Database\\Connection->runQueryCallback('create table `d...', Array, Object(Closure))
+#1 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(576): Illuminate\\Database\\Connection->run('create table `d...', Array, Object(Closure))
+#2 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(122): Illuminate\\Database\\Connection->statement('create table `d...')
+#3 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(708): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(526): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(363): Illuminate\\Database\\Schema\\Builder->create('daily_meal_coun...', Object(Closure))
+#6 /home/riyanh/project/catering-saas/database/migrations/2026_10_05_142144_create_daily_meal_counts_table.php(14): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(517): Illuminate\\Database\\Migrations\\Migration@anonymous->up()
+#8 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(442): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up')
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(451): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runMigration():438}()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up', '2026_10_05_1421...')
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php(43): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runUp():253}()
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(814): Illuminate\\Console\\View\\Components\\Task->render('2026_10_05_1421...', Object(Closure))
+#13 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->write('Illuminate\\\\Cons...', '2026_10_05_1421...', Object(Closure))
+#14 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(211): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/riyanh/pr...', 10, false)
+#15 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(138): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#16 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(118): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#17 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+#18 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#19 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+#20 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#21 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#22 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#23 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#24 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate\\Container\\Container->call(Array)
+#26 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(284): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'daily_meal_counts' already exists at /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php:587)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(587): PDOStatement->execute()
+#1 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(830): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::statement():576}('create table `d...', Array)
+#2 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(797): Illuminate\\Database\\Connection->runQueryCallback('create table `d...', Array, Object(Closure))
+#3 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Connection.php(576): Illuminate\\Database\\Connection->run('create table `d...', Array, Object(Closure))
+#4 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(122): Illuminate\\Database\\Connection->statement('create table `d...')
+#5 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(708): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(526): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(363): Illuminate\\Database\\Schema\\Builder->create('daily_meal_coun...', Object(Closure))
+#8 /home/riyanh/project/catering-saas/database/migrations/2026_10_05_142144_create_daily_meal_counts_table.php(14): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(517): Illuminate\\Database\\Migrations\\Migration@anonymous->up()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(442): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up')
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(451): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runMigration():438}()
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Illuminate\\Database\\Migrations\\Migration@anonymous), 'up', '2026_10_05_1421...')
+#13 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php(43): Illuminate\\Database\\Migrations\\Migrator->{closure:Illuminate\\Database\\Migrations\\Migrator::runUp():253}()
+#14 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(814): Illuminate\\Console\\View\\Components\\Task->render('2026_10_05_1421...', Object(Closure))
+#15 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(253): Illuminate\\Database\\Migrations\\Migrator->write('Illuminate\\\\Cons...', '2026_10_05_1421...', Object(Closure))
+#16 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(211): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/riyanh/pr...', 10, false)
+#17 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(138): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#18 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(118): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#19 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(671): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+#20 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#21 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+#22 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#23 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#24 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#26 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(280): Illuminate\\Container\\Container->call(Array)
+#28 /home/riyanh/project/catering-saas/vendor/symfony/console/Command/Command.php(284): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Console/Command.php(249): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(1144): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(379): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#36 {main}
+"} 
+[2026-10-05 17:25:30] development.ERROR: Class "App\Models\Recapitulation" not found {"userId":1,"exception":"[object] (Error(code: 0): Class \"App\\Models\\Recapitulation\" not found at /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Resource.php:95)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Pages/ListRecords.php(223): Filament\\Resources\\Resource::getEloquentQuery()
+#1 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Pages/ListRecords.php(119): Filament\\Resources\\Pages\\ListRecords->getTableQuery()
+#2 /home/riyanh/project/catering-saas/vendor/filament/support/src/Concerns/EvaluatesClosures.php(36): Filament\\Resources\\Pages\\ListRecords->{closure:Filament\\Resources\\Pages\\ListRecords::makeTable():119}()
+#3 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Table/Concerns/HasQuery.php(70): Filament\\Support\\Components\\Component->evaluate(Object(Closure))
+#4 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Table/Concerns/HasRecords.php(115): Filament\\Tables\\Table->getQuery()
+#5 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Concerns/HasFilters.php(40): Filament\\Tables\\Table->getModel()
+#6 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(266): Filament\\Resources\\Pages\\ListRecords->getTableFiltersForm()
+#7 /home/riyanh/project/catering-saas/vendor/filament/schemas/src/Concerns/InteractsWithSchemas.php(206): value(Object(Closure))
+#8 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Concerns/InteractsWithTable.php(49): Filament\\Pages\\BasePage->cacheSchema('tableFiltersFor...', Object(Closure))
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Filament\\Resources\\Pages\\ListRecords->bootedInteractsWithTable()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Wrapped.php(23): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array)
+#14 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportLifecycleHooks/SupportLifecycleHooks.php(214): Livewire\\Wrapped->__call('bootedInteracts...', Array)
+#15 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportLifecycleHooks/SupportLifecycleHooks.php(39): Livewire\\Features\\SupportLifecycleHooks\\SupportLifecycleHooks->callTraitHook('booted')
+#16 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/ComponentHook.php(19): Livewire\\Features\\SupportLifecycleHooks\\SupportLifecycleHooks->mount(Array, false, Array)
+#17 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/ComponentHookRegistry.php(45): Livewire\\ComponentHook->callMount(Array, false, Array)
+#18 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/EventBus.php(87): Livewire\\ComponentHookRegistry::{closure:Livewire\\ComponentHookRegistry::boot():39}(Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#19 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/helpers.php(98): Livewire\\EventBus->trigger('mount', Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#20 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(77): Livewire\\trigger('mount', Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#21 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/LivewireManager.php(102): Livewire\\Mechanisms\\HandleComponents\\HandleComponents->mount('App\\\\Filament\\\\Re...', Array, NULL, Array)
+#22 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/HandlesPageComponents.php(19): Livewire\\LivewireManager->mount('App\\\\Filament\\\\Re...', Array)
+#23 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/SupportPageComponents.php(118): Livewire\\Component->{closure:Livewire\\Features\\SupportPageComponents\\HandlesPageComponents::__invoke():14}()
+#24 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/HandlesPageComponents.php(14): Livewire\\Features\\SupportPageComponents\\SupportPageComponents::interceptTheRenderOfTheComponentAndRetreiveTheLayoutConfiguration(Object(Closure))
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): Livewire\\Component->__invoke()
+#26 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Route.php(275): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), '__invoke')
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Route.php(215): Illuminate\\Routing\\Route->runController()
+#28 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate\\Routing\\Route->run()
+#29 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Router->{closure:Illuminate\\Routing\\Router::runRouteWithinStack():821}(Object(Illuminate\\Http\\Request))
+#30 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/DispatchServingFilamentEvent.php(15): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Http\\Request))
+#31 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\DispatchServingFilamentEvent->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/DisableBladeIconComponents.php(14): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#33 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\DisableBladeIconComponents->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(52): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#35 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestForgery.php(104): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#37 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/AuthenticateSession.php(70): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#39 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Session\\Middleware\\AuthenticateSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(63): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#41 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#43 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#45 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#46 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#48 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#50 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/SetUpPanel.php(19): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#52 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\SetUpPanel->handle(Object(Illuminate\\Http\\Request), Object(Closure), Object(Filament\\Panel))
+#53 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#54 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#56 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#57 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#58 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#59 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Kernel->{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}(Object(Illuminate\\Http\\Request))
+#60 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Http\\Request))
+#61 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#63 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#64 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#66 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#69 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#71 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#72 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#73 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#74 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#75 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#76 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#77 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#78 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(28): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#79 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#80 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#81 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#82 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#83 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#84 /home/riyanh/project/catering-saas/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#85 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/home/riyanh/pr...')
+#86 {main}
+"} 
+[2026-10-21 12:44:57] development.ERROR: Class "App\Models\Recapitulation" not found {"userId":1,"exception":"[object] (Error(code: 0): Class \"App\\Models\\Recapitulation\" not found at /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Resource.php:95)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Pages/ListRecords.php(223): Filament\\Resources\\Resource::getEloquentQuery()
+#1 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Resources/Pages/ListRecords.php(119): Filament\\Resources\\Pages\\ListRecords->getTableQuery()
+#2 /home/riyanh/project/catering-saas/vendor/filament/support/src/Concerns/EvaluatesClosures.php(36): Filament\\Resources\\Pages\\ListRecords->{closure:Filament\\Resources\\Pages\\ListRecords::makeTable():119}()
+#3 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Table/Concerns/HasQuery.php(70): Filament\\Support\\Components\\Component->evaluate(Object(Closure))
+#4 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Table/Concerns/HasRecords.php(115): Filament\\Tables\\Table->getQuery()
+#5 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Concerns/HasFilters.php(40): Filament\\Tables\\Table->getModel()
+#6 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(266): Filament\\Resources\\Pages\\ListRecords->getTableFiltersForm()
+#7 /home/riyanh/project/catering-saas/vendor/filament/schemas/src/Concerns/InteractsWithSchemas.php(206): value(Object(Closure))
+#8 /home/riyanh/project/catering-saas/vendor/filament/tables/src/Concerns/InteractsWithTable.php(49): Filament\\Pages\\BasePage->cacheSchema('tableFiltersFor...', Object(Closure))
+#9 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Filament\\Resources\\Pages\\ListRecords->bootedInteractsWithTable()
+#10 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#11 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#12 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Wrapped.php(23): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array)
+#14 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportLifecycleHooks/SupportLifecycleHooks.php(214): Livewire\\Wrapped->__call('bootedInteracts...', Array)
+#15 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportLifecycleHooks/SupportLifecycleHooks.php(39): Livewire\\Features\\SupportLifecycleHooks\\SupportLifecycleHooks->callTraitHook('booted')
+#16 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/ComponentHook.php(19): Livewire\\Features\\SupportLifecycleHooks\\SupportLifecycleHooks->mount(Array, false, Array)
+#17 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/ComponentHookRegistry.php(45): Livewire\\ComponentHook->callMount(Array, false, Array)
+#18 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/EventBus.php(87): Livewire\\ComponentHookRegistry::{closure:Livewire\\ComponentHookRegistry::boot():39}(Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#19 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/helpers.php(98): Livewire\\EventBus->trigger('mount', Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#20 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(77): Livewire\\trigger('mount', Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), Array, NULL, false, Array)
+#21 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/LivewireManager.php(102): Livewire\\Mechanisms\\HandleComponents\\HandleComponents->mount('App\\\\Filament\\\\Re...', Array, NULL, Array)
+#22 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/HandlesPageComponents.php(19): Livewire\\LivewireManager->mount('App\\\\Filament\\\\Re...', Array)
+#23 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/SupportPageComponents.php(118): Livewire\\Component->{closure:Livewire\\Features\\SupportPageComponents\\HandlesPageComponents::__invoke():14}()
+#24 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportPageComponents/HandlesPageComponents.php(14): Livewire\\Features\\SupportPageComponents\\SupportPageComponents::interceptTheRenderOfTheComponentAndRetreiveTheLayoutConfiguration(Object(Closure))
+#25 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): Livewire\\Component->__invoke()
+#26 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Route.php(275): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Filament\\Resources\\Recapitulations\\Pages\\ListRecapitulations), '__invoke')
+#27 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Route.php(215): Illuminate\\Routing\\Route->runController()
+#28 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate\\Routing\\Route->run()
+#29 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Router->{closure:Illuminate\\Routing\\Router::runRouteWithinStack():821}(Object(Illuminate\\Http\\Request))
+#30 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/DispatchServingFilamentEvent.php(15): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Http\\Request))
+#31 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\DispatchServingFilamentEvent->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/DisableBladeIconComponents.php(14): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#33 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\DisableBladeIconComponents->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(52): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#35 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestForgery.php(104): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#37 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/AuthenticateSession.php(70): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#39 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Session\\Middleware\\AuthenticateSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(63): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#41 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#43 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#45 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#46 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#48 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#50 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /home/riyanh/project/catering-saas/vendor/filament/filament/src/Http/Middleware/SetUpPanel.php(19): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#52 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Filament\\Http\\Middleware\\SetUpPanel->handle(Object(Illuminate\\Http\\Request), Object(Closure), Object(Filament\\Panel))
+#53 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#54 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#56 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#57 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#58 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#59 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Kernel->{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}(Object(Illuminate\\Http\\Request))
+#60 /home/riyanh/project/catering-saas/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Http\\Request))
+#61 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#63 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#64 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#66 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#69 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#71 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#72 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#73 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#74 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#75 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#76 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#77 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#78 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(28): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#79 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#80 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(Object(Illuminate\\Http\\Request))
+#81 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#82 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#83 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#84 /home/riyanh/project/catering-saas/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#85 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/home/riyanh/pr...')
+#86 {main}
+"} 
+[2026-10-23 13:31:03] development.ERROR: Command "server" is not defined.
+
+Did you mean one of these?
+    make:mcp-server
+    make:observer
+    serve {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"server\" is not defined.
+
+Did you mean one of these?
+    make:mcp-server
+    make:observer
+    serve at /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php:785)
+[stacktrace]
+#0 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(321): Symfony\\Component\\Console\\Application->find('server')
+#1 /home/riyanh/project/catering-saas/vendor/symfony/console/Application.php(218): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/riyanh/project/catering-saas/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/riyanh/project/catering-saas/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#5 {main}
+"} 
+[2026-10-23 14:15:43] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Schemas/CompanyForm.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:16:13] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Schemas/CompanyForm.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:16:44] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Schemas/CompanyForm.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:17:14] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Schemas/CompanyForm.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:17:44] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Schemas/CompanyForm.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:18:45] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Settings.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:18:54] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Settings.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:18:55] development.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at /home/riyanh/project/catering-saas/app/Filament/Pages/Settings.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:28:40] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:28:46] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:28:51] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:29:09] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:30:32] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:32:35] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:32:41] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:33:13] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:34:23] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:34:39] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:35:09] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 
+[2026-10-23 14:35:15] development.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 7838700 bytes) at /home/riyanh/project/catering-saas/vendor/dompdf/dompdf/lib/Cpdf.php:6146)
+[stacktrace]
+#0 {main}
+"} 

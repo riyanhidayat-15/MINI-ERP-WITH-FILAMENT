@@ -9,6 +9,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Storage;
 use UnitEnum;
 
 class Settings extends Page implements HasForms
@@ -17,11 +18,12 @@ class Settings extends Page implements HasForms
 
     protected string $view = 'filament.pages.settings';
 
-    protected static ?string $navigationLabel = 'Company';
+    protected static ?string $navigationLabel = 'Perusahaan';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-office';
+    protected static string|\BackedEnum|null $navigationIcon =
+        'heroicon-o-building-office-2';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+    protected static string|UnitEnum|null $navigationGroup = 'Pengaturan';
 
     protected static ?string $title = 'Pengaturan Perusahaan';
 
@@ -37,14 +39,7 @@ class Settings extends Page implements HasForms
             ]);
         }
 
-        $data = $company->toArray();
-
-        // FileUpload butuh value berupa array of string, bukan string biasa
-        if (! empty($data['logo_path']) && is_string($data['logo_path'])) {
-            $data['logo_path'] = [$data['logo_path']];
-        }
-
-        $this->data = $data;
+        $this->form->fill($company->toArray());
     }
 
     public function form(Schema $schema): Schema
@@ -55,20 +50,34 @@ class Settings extends Page implements HasForms
 
     public function save(): void
     {
-        $company = Company::first();
+        $company = Company::firstOrFail();
 
         $state = $this->form->getState();
 
-        // FileUpload mengembalikan array, ambil elemen pertama untuk disimpan sebagai string
-        if (isset($state['logo_path']) && is_array($state['logo_path'])) {
-            $state['logo_path'] = reset($state['logo_path']) ?: null;
-        }
+        $oldLogoPath = $company->logo_path;
 
         $company->update($state);
+        $company->refresh();
+
+        if (
+            filled($oldLogoPath) &&
+            $oldLogoPath !== $company->logo_path
+        ) {
+            Storage::disk('public')->delete($oldLogoPath);
+        }
+
+        $this->form->fill($company->toArray());
 
         Notification::make()
-            ->title('Data perusahaan berhasil disimpan')
+            ->title('Pengaturan berhasil disimpan')
             ->success()
             ->send();
+    }
+
+    public function cancel(): void
+    {
+        $company = Company::firstOrFail();
+
+        $this->form->fill($company->toArray());
     }
 }
