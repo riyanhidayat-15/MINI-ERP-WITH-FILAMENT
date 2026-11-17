@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Orders\Pages;
 
 use App\Filament\Resources\Orders\OrderResource;
+use App\Models\Order;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
@@ -22,16 +23,13 @@ class ListOrders extends ListRecords
     public function getTabs(): array
     {
         return [
-            'aktif' => Tab::make('Order Aktif')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'process'))
-                ->badge($this->getModel()::where('status', 'process')->count())
+            'belum_ditagih' => Tab::make('Belum Ditagih')
+                ->modifyQueryUsing(fn (Builder $query) => $query->whereDoesntHave('invoice.receipt', fn (Builder $q) => $q->whereNotNull('proof_photo_path')))
+                ->badge(Order::query()->whereDoesntHave('invoice.receipt', fn (Builder $q) => $q->whereNotNull('proof_photo_path'))->count())
                 ->badgeColor('warning'),
 
-            'selesai' => Tab::make('Selesai')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'done')),
-
-            'batal' => Tab::make('Dibatalkan')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'cancelled')),
+            'ditagih' => Tab::make('Ditagih')
+                ->modifyQueryUsing(fn (Builder $query) => $query->whereHas('invoice.receipt', fn (Builder $q) => $q->whereNotNull('proof_photo_path'))),
 
             'semua' => Tab::make('Semua Orderan'),
         ];

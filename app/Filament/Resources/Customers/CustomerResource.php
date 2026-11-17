@@ -19,11 +19,13 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingStorefront;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 
-    protected static string | UnitEnum | null $navigationGroup= 'General';
+    protected static string|UnitEnum|null $navigationGroup = 'Master Data';
 
-    protected static ?string $navigationLabel = "Clients";
+    protected static ?string $navigationLabel = 'Pelanggan';
+
+    protected static ?int $navigationSort = 10;
 
     public static function form(Schema $schema): Schema
     {

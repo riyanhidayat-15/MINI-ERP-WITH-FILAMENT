@@ -6,9 +6,9 @@ use App\Models\Order;
 
 class OrderService
 {
-    public function generateOrderNumber():string
+    public function generateOrderNumber(): string
     {
-        $prefix = 'ORD-' . now()->format('Ym');
+        $prefix = 'ORD-'.now()->format('Ym');
 
         $lastOrder = Order::query()
             ->where('order_number', 'like', "{$prefix}-%")
@@ -28,11 +28,10 @@ class OrderService
         );
     }
 
-    public function create(array $data): Order {
-
+    public function create(array $data): Order
+    {
         $data['order_number'] = $this->generateOrderNumber();
 
         return Order::create($data);
-
     }
 }

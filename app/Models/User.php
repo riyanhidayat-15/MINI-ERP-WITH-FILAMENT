@@ -9,7 +9,6 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
@@ -31,11 +30,11 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * Get the attributes that should be cast.
-     *  
+     *
      * @return array<string, string>
      */
     protected function casts(): array
@@ -58,13 +57,13 @@ class User extends Authenticatable implements FilamentUser
             ->implode('');
     }
 
-    public function canAccessPanel(Panel $panel): bool {
+    public function canAccessPanel(Panel $panel): bool
+    {
         return $this->isAdmin();
     }
 
-    public function isAdmin():bool {
+    public function isAdmin(): bool
+    {
         return $this->role === 'admin';
     }
-
-
 }

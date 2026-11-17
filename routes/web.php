@@ -5,7 +5,8 @@ use App\Models\Invoice;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
+Route::redirect("/", "/admin/login")->name("home");
+Route::redirect("/login", "/admin/login")->name("login");
 
 Route::get('/invoice/{invoice}/pdf', function (Invoice $invoice) {
     $company = Company::first();

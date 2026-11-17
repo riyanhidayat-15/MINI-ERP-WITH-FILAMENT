@@ -21,7 +21,7 @@ class InvoiceService
 
     public function generateReceiptNumber(): string
     {
-        $prefix = now()->format('Ymd');
+        $prefix = now()->format('Ym');
 
         $sequence = Receipt::query()
             ->where('receipt_number', 'like', "{$prefix}%")

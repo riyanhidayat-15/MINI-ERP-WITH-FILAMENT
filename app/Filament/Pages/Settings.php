@@ -20,6 +20,8 @@ class Settings extends Page implements HasForms
 
     protected static ?string $navigationLabel = 'Perusahaan';
 
+    protected static ?int $navigationSort = 30;
+
     protected static string|\BackedEnum|null $navigationIcon =
         'heroicon-o-building-office-2';
 

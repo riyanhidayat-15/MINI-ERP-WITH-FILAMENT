@@ -16,6 +16,9 @@ return new class extends Migration
             $table->decimal('amount', 15, 2);
             $table->string('amount_in_words');
             $table->string('payment_purpose');
+            $table->string('proof_number')->nullable();
+            $table->date('proof_date')->nullable();
+            $table->string('proof_photo_path')->nullable();
             $table->timestamps();
         });
     }

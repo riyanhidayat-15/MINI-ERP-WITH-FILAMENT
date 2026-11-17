@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Invoice extends Model
 {
@@ -28,18 +30,24 @@ class Invoice extends Model
         'total_amount' => 'decimal:2',
     ];
 
-    public function order()
+    public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
     }
 
-    public function customer()
+    public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function receipt()
+    public function receipt(): HasOne
     {
         return $this->hasOne(Receipt::class);
     }
+
+    public function isEditable(): bool
+    {
+        return $this->order?->isEditable() ?? true;
+    }
+
 }

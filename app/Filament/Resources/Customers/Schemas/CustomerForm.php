@@ -27,7 +27,8 @@ class CustomerForm
                         TextInput::make('phone')
                             ->label('Nomor Telepon')
                             ->tel()
-                            ->prefixIcon('heroicon-o-phone'),
+                            ->prefixIcon('heroicon-o-phone')
+                            ->required(),
 
                         Select::make('province')
                             ->label('Provinsi')
@@ -38,10 +39,12 @@ class CustomerForm
                             })
                             ->searchable()
                             ->live()
+                            ->required()
                             ->afterStateUpdated(fn ($set) => $set('city', null)),
 
                         Select::make('city')
                             ->label('Kota/Kabupaten')
+                            ->required()
                             ->options(function ($get) {
                                 $provinceName = $get('province');
 
@@ -67,11 +70,13 @@ class CustomerForm
 
                         TextInput::make('postal_code')
                             ->label('Kode Pos')
+                            ->required()
                             ->maxLength(10),
 
                         Textarea::make('address')
                             ->label('Alamat')
                             ->rows(3)
+                            ->required()
                             ->columnSpanFull(),
                     ])
                     ->columns(2)
